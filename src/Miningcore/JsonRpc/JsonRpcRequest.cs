@@ -29,6 +29,9 @@ public class JsonRpcRequest<T>
         Id = id;
     }
 
+    [JsonProperty("error")]
+    public JsonRpcError Error { get; set; }
+
     [JsonProperty("jsonrpc")]
     public string JsonRpc => "2.0";
 
