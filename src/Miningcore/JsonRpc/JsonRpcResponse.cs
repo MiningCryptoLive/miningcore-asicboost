@@ -46,10 +46,7 @@ public class JsonRpcResponse<T>
 
     //[JsonProperty(PropertyName = "jsonrpc")]
     //public string JsonRpc => "2.0";
-    
-    [JsonProperty("error")]
-    public JsonRpcError Error { get; set; }
-    
+     
     [JsonProperty(PropertyName = "result", NullValueHandling = NullValueHandling.Ignore)]
     public object Result { get; set; }
 
