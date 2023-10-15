@@ -279,7 +279,8 @@ public class BitcoinPool : PoolBase
         response.Extra = new Dictionary<string, object>();
         response.Extra["error"] = null;
 
-        await connection.RespondAsync(response);    }
+        await connection.RespondAsync(response);    
+    }
 
     private void ConfigureVersionRolling(StratumConnection connection, BitcoinWorkerContext context,
         IReadOnlyDictionary<string, JToken> extensionParams, Dictionary<string, object> result)
