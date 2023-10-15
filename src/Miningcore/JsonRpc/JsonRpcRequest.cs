@@ -35,7 +35,7 @@ public class JsonRpcRequest<T>
     [JsonProperty("jsonrpc")]
     public string JsonRpc => "2.0";
 
-    [JsonProperty("method", NullValueHandling = NullValueHandling.Include)]
+    [JsonProperty("method", NullValueHandling = NullValueHandling.Ignore)]
     public string Method { get; set; }
 
     [JsonProperty("params")]
