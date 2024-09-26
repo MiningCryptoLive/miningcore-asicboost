@@ -47,10 +47,10 @@
       "enabled": true,
       "coin": "monero",
       "randomXRealm": "xmr1",
-      "address": "43g9avHw8WYHnq749LU1Nw1BZ8FCwS2B7GLoW4vif7cPjJB7e9f6WgU8ptDFM7kyNS9kz1zy334dAYFKgP2KJU8vMoZ3hYD",
+      "address": "431HvwpXgAuYZ2XTPsxNKTb1ed5P7XDDLiJ5oRBj8STDrFs2b2EGXkECgFWYxV2FUBuNzeAXvJwHgMh2fdsD953LhFw71N",
       "rewardRecipients": [
         {
-          "address": "475YVJbPHPedudkhrcNp1wDcLMTGYusGPF5fqE7XjnragVLPdqbCHBdZg3dF4dN9hXMjjvGbykS6a77dTAQvGrpiQqHp2eH",
+          "address": "431HvwpXgAuYZ2XTPsxNKTb1ed5P7XDDLiJ5oRBj8STDrFs2b2EGXkECgFWYxV2FUBuNzeAXvJwHgMh2fdsD953LhFw71N",
           "percentage": 1
         }
       ],
@@ -77,11 +77,11 @@
         },
         "3033": {
           "listenAddress": "0.0.0.0",
-          "difficulty": 25000,
+          "difficulty": 250000,
           "name": "GPU Mining",
           "varDiff": {
-            "minDiff": 10000,
-            "maxDiff": null,
+            "minDiff": 250000,
+            "maxDiff": 500000,
             "targetTime": 15,
             "retargetTime": 90,
             "variancePercent": 30
@@ -89,10 +89,10 @@
         },
         "3034": {
           "listenAddress": "0.0.0.0",
-          "difficulty": 200000,
+          "difficulty": 960000,
           "name": "High-End Multi GPU Mining",
           "varDiff": {
-            "minDiff": 200000,
+            "minDiff": 960000,
             "maxDiff": null,
             "targetTime": 15,
             "retargetTime": 120,
@@ -118,8 +118,8 @@
       "paymentProcessing": {
         "enabled": true,
         "minimumPayment": 0.25,
-        "minimumPaymentToPaymentId": 1.0,
-        "payoutScheme": "PPLNS",
+        "minimumPaymentToPaymentId": 0.15,
+        "payoutScheme": "SOLO",
         "payoutSchemeConfig": {
           "factor": 2.0
         }
