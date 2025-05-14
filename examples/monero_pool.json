@@ -1,19 +1,28 @@
-﻿{
+{
     "logging": {
         "level": "info",
         "enableConsoleLog": true,
         "enableConsoleColors": true,
         "logFile": "",
+        "apiLogFile": "",
         "logBaseDirectory": "",
         "perPoolLogFile": false
     },
     "banning": {
-        "manager": "integrated",
+        "manager": "Integrated",
         "banOnJunkReceive": true,
         "banOnInvalidShares": false
     },
+     "statistics": {
+    "updateInterval": 15, //default 120
+    "hashrateCalculationWindow": 10,
+    "gcInterval": 1,
+    "randomXVmCount": 2,
+     "randomXFlagsAdd": "RANDOMX_FLAG_FULL_MEM",
+    "cleanupDays": 720
+},
     "notifications": {
-        "enabled": true,
+        "enabled": false,
         "email": {
             "host": "smtp.example.com",
             "port": 587,
@@ -42,20 +51,39 @@
         "interval": 600,
         "shareRecoveryFile": "recovered-shares.txt"
     },
+    "api": {
+        "enabled": true,
+        "listenAddress": "127.0.0.1",
+        "port": 4000,
+        "metricsIpWhitelist": [],
+        "rateLimiting": {
+            "disabled": true,
+            "rules": [
+                {
+                    "Endpoint": "*",
+                    "Period": "1s",
+                    "Limit": 5
+                }
+            ],
+            "ipWhitelist": [
+                ""
+            ]
+        }
+    },
     "pools": [{
       "id": "xmr1",
       "enabled": true,
       "coin": "monero",
       "randomXRealm": "xmr1",
-      "address": "431HvwpXgAuYZ2XTPsxNKTb1ed5P7XDDLiJ5oRBj8STDrFs2b2EGXkECgFWYxV2FUBuNzeAXvJwHgMh2fdsD953LhFw71N",
+      "address": "43g9avHw8WYHnq749LU1Nw1BZ8FCwS2B7GLoW4vif7cPjJB7e9f6WgU8ptDFM7kyNS9kz1zy334dAYFKgP2KJU8vMoZ3hYD",
       "rewardRecipients": [
         {
-          "address": "431HvwpXgAuYZ2XTPsxNKTb1ed5P7XDDLiJ5oRBj8STDrFs2b2EGXkECgFWYxV2FUBuNzeAXvJwHgMh2fdsD953LhFw71N",
+          "address": "475YVJbPHPedudkhrcNp1wDcLMTGYusGPF5fqE7XjnragVLPdqbCHBdZg3dF4dN9hXMjjvGbykS6a77dTAQvGrpiQqHp2eH",
           "percentage": 1
         }
       ],
-      "blockRefreshInterval": 500,
-      "clientConnectionTimeout": 600,
+      "blockRefreshInterval": 120,
+      "clientConnectionTimeout": 1600,
       "banning": {
         "enabled": true,
         "time": 600,
@@ -65,39 +93,18 @@
       "ports": {
         "3032": {
           "listenAddress": "0.0.0.0",
-          "difficulty": 7500,
-          "name": "CPU Mining",
-          "varDiff": {
-            "minDiff": 1000,
-            "maxDiff": null,
-            "targetTime": 15,
-            "retargetTime": 90,
-            "variancePercent": 30
-          }
+          "difficulty": 240000,
+          "name": "Low End Hardwarw"
         },
         "3033": {
           "listenAddress": "0.0.0.0",
-          "difficulty": 250000,
-          "name": "GPU Mining",
-          "varDiff": {
-            "minDiff": 250000,
-            "maxDiff": 500000,
-            "targetTime": 15,
-            "retargetTime": 90,
-            "variancePercent": 30
-          }
+          "difficulty": 480000,
+          "name": "Mid-Range Hardware"
         },
         "3034": {
           "listenAddress": "0.0.0.0",
-          "difficulty": 960000,
-          "name": "High-End Multi GPU Mining",
-          "varDiff": {
-            "minDiff": 960000,
-            "maxDiff": null,
-            "targetTime": 15,
-            "retargetTime": 120,
-            "variancePercent": 30
-          }
+          "difficulty": 1171717,
+          "name": "High-End Hardware"
         }
       },
       "daemons": [
@@ -117,8 +124,7 @@
       ],
       "paymentProcessing": {
         "enabled": true,
-        "minimumPayment": 0.25,
-        "minimumPaymentToPaymentId": 0.15,
+        "minimumPayment": 0.005,
         "payoutScheme": "SOLO",
         "payoutSchemeConfig": {
           "factor": 2.0
